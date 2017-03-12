@@ -1,4 +1,5 @@
 import Entity.Bag;
+import Entity.EstimateValue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,20 +8,25 @@ import java.util.List;
  * Created by toprak on 3/12/2017.
  */
 public class Bandit {
-    List<Double> estimateValues = new ArrayList<Double>();
-    List<Bag> t = new ArrayList<Bag>();
+    List<EstimateValue> estimateValues = new ArrayList<EstimateValue>();
+    List<Bag> bags = new ArrayList<Bag>();
+    double alpha = 0.0;
 
     public int greedySelection(){
-        Double bagWithGreatestEstimate = estimateValues.get(0);
+        EstimateValue bagWithGreatestEstimate = estimateValues.get(0);
 
-        for(Double estimate : estimateValues){
+        for(EstimateValue estimate : estimateValues){
             if(estimateValues.indexOf(estimate) == 0){
                 bagWithGreatestEstimate = estimate;
                 continue;
             }
-            if(estimate > bagWithGreatestEstimate)
+            if(estimate.estimateValue > bagWithGreatestEstimate.estimateValue)
                 bagWithGreatestEstimate = estimate;
         }
         return estimateValues.indexOf(bagWithGreatestEstimate);
+    }
+
+    public void updateEstimateValue(){
+
     }
 }

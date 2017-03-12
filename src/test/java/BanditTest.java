@@ -1,3 +1,4 @@
+import Entity.EstimateValue;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,10 +13,23 @@ public class BanditTest {
     @Before
     public void setUp() {
         bandit = new Bandit();
-        bandit.estimateValues.add(4.0);
-        bandit.estimateValues.add(5.0);
-        bandit.estimateValues.add(6.0);
-        bandit.estimateValues.add(7.0);
+        EstimateValue e1 = new EstimateValue(0.0);
+        e1.estimateValue = 4.0;
+
+        EstimateValue e2 = new EstimateValue(0.0);
+        e2.estimateValue = 5.0;
+
+        EstimateValue e3 = new EstimateValue(0.0);
+        e3.estimateValue = 6.0;
+
+        EstimateValue e4 = new EstimateValue(0.0);
+        e4.estimateValue = 7.0;
+
+
+        bandit.estimateValues.add(e1);
+        bandit.estimateValues.add(e2);
+        bandit.estimateValues.add(e3);
+        bandit.estimateValues.add(e4);
     }
 
     @Test

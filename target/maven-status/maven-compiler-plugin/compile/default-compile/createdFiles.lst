@@ -1,2 +1,3 @@
 Bandit.class
 Entity\Bag.class
+Entity\EstimateValue.class
