@@ -9,6 +9,8 @@ public class Bag {
     public int blueBalls;
     public int totalBalls;
 
+
+
     public Bag(int redBalls, int yellowBalls, int blueBalls) {
         this.redBalls = redBalls;
         this.yellowBalls = yellowBalls;
