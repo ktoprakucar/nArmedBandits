@@ -1,20 +1,23 @@
 package Entity;
 
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by toprak on 3/12/2017.
  */
 public class Bag {
-    public int redBalls;
-    public int yellowBalls;
-    public int blueBalls;
-    public int totalBalls;
+  public List<Ball> balls = new ArrayList<Ball>();
 
 
+  public Bag(int redBalls, int yellowBalls, int blueBalls) {
+    this.balls.addAll(addBall(redBalls, Color.RED));
+    this.balls.addAll(addBall(redBalls, Color.YELLOW));
+    this.balls.addAll(addBall(redBalls, Color.BLUE));
+  }
 
-    public Bag(int redBalls, int yellowBalls, int blueBalls) {
-        this.redBalls = redBalls;
-        this.yellowBalls = yellowBalls;
-        this.blueBalls = blueBalls;
-        totalBalls = redBalls + yellowBalls + blueBalls;
-    }
+  private List<Ball> addBall(int amount, Color color) {
+    return null;
+  }
 }

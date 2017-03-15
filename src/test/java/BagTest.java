@@ -13,13 +13,4 @@ public class BagTest {
     public void setUp() {
     }
 
-    @Test
-    public void test_add_balls() {
-        Bag bag = new Bag(2, 3, 4);
-        assertEquals(2, bag.redBalls);
-        assertEquals(3, bag.yellowBalls);
-        assertEquals(4, bag.blueBalls);
-        assertEquals(9, bag.totalBalls);
-
-    }
 }
