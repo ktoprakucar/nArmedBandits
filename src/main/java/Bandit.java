@@ -26,7 +26,9 @@ public class Bandit {
         return estimateValues.indexOf(bagWithGreatestEstimate);
     }
 
-    public void updateEstimateValue(){
+    public void updateEstimateValue(int bagId, double reward){
+        EstimateValue estimateValue = estimateValues.get(bagId);
+        estimateValue.updateEstimateValue(reward);
 
     }
 }
