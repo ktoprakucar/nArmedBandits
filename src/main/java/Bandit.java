@@ -1,4 +1,5 @@
 import Entity.Bag;
+import Entity.Ball;
 import Entity.EstimateValue;
 
 import java.util.ArrayList;
@@ -40,5 +41,11 @@ public class Bandit {
     EstimateValue estimateValue = estimateValues.get(bagId);
     estimateValue.updateEstimateValue(reward);
 
+  }
+
+  public Ball selectBallRandomly(int i) {
+    Bag bag = bags.get(i);
+    int randomBallIndex = generator.nextInt((bag.balls.size() - 1) - 0 + 1) + 0;
+    return bag.balls.get(randomBallIndex);
   }
 }

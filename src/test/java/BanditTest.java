@@ -1,3 +1,5 @@
+import Entity.Bag;
+import Entity.Ball;
 import Entity.EstimateValue;
 import org.junit.Before;
 import org.junit.Test;
@@ -74,5 +76,13 @@ public class BanditTest {
 
     int index = bandit.greedySelection();
     assertThat(index, anyOf(is(3), is(4), is(5)));
+  }
+
+  @Test
+  public void test_select_ball_from_bag_randomly(){
+    Bag bag = new Bag(10,20,30);
+    bandit.bags.add(bag);
+    Ball ball = bandit.selectBallRandomly(0);
+    System.out.println(ball.color);
   }
 }
