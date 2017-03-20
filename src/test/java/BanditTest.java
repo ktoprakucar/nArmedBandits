@@ -85,4 +85,24 @@ public class BanditTest {
     Ball ball = bandit.selectBallRandomly(0);
     System.out.println(ball.color);
   }
+
+  @Test
+  public void test_use_noise_for_rewarding_with_50_percent(){
+    bandit.noise = 50;
+    int reward = bandit.useNoiseForRewarding();
+  }
+
+  @Test
+  public void test_use_noise_for_rewarding_with_0_percent(){
+    bandit.noise = 0;
+    int reward = bandit.useNoiseForRewarding();
+    assertEquals(reward, 0);
+  }
+
+  @Test
+  public void test_use_noise_for_rewarding_with_100_percent(){
+    bandit.noise = 100;
+    int reward = bandit.useNoiseForRewarding();
+    assertEquals(reward, 1);
+  }
 }

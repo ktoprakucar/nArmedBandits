@@ -14,6 +14,7 @@ public class Bandit {
   Random generator = new Random();
   List<Bag> bags = new ArrayList<Bag>();
   double alpha = 0.0;
+  double noise = 0.0;
 
   public int greedySelection() {
     List<EstimateValue> maxValues = new ArrayList<EstimateValue>();
@@ -47,5 +48,12 @@ public class Bandit {
     Bag bag = bags.get(i);
     int randomBallIndex = generator.nextInt((bag.balls.size() - 1) - 0 + 1) + 0;
     return bag.balls.get(randomBallIndex);
+  }
+
+  public int useNoiseForRewarding() {
+    double probability = noise / 100;
+    if(Math.random() <= probability)
+      return 1;
+    return 0;
   }
 }
