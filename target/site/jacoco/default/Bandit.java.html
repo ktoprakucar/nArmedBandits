@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Bandit.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">nArmedBandits</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Bandit.java</span></div><h1>Bandit.java</h1><pre class="source lang-java linenums">import Entity.Bag;
+import Entity.Ball;
+import Entity.EstimateValue;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+/**
+ * Created by toprak on 3/12/2017.
+ */
+<span class="fc" id="L12">public class Bandit {</span>
+<span class="fc" id="L13">  List&lt;EstimateValue&gt; estimateValues = new ArrayList&lt;EstimateValue&gt;();</span>
+<span class="fc" id="L14">  Random generator = new Random();</span>
+<span class="fc" id="L15">  List&lt;Bag&gt; bags = new ArrayList&lt;Bag&gt;();</span>
+<span class="fc" id="L16">  double alpha = 0.0;</span>
+
+  public int greedySelection() {
+<span class="fc" id="L19">    List&lt;EstimateValue&gt; maxValues = new ArrayList&lt;EstimateValue&gt;();</span>
+
+<span class="fc bfc" id="L21" title="All 2 branches covered.">    for (EstimateValue estimate : estimateValues) {</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">      if (estimateValues.indexOf(estimate) == 0) {</span>
+<span class="fc" id="L23">        maxValues.add(estimateValues.get(0));</span>
+<span class="fc" id="L24">        continue;</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">      } else if (estimate.estimateValue == maxValues.get(0).estimateValue)</span>
+<span class="fc" id="L26">        maxValues.add(estimate);</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">      else if (estimate.estimateValue &gt; maxValues.get(0).estimateValue) {</span>
+<span class="fc" id="L28">        maxValues.clear();</span>
+<span class="fc" id="L29">        maxValues.add(estimate);</span>
+      }
+<span class="fc" id="L31">    }</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">    if (maxValues.size() == 1)</span>
+<span class="fc" id="L33">      return estimateValues.indexOf(maxValues.get(0));</span>
+    else {
+<span class="fc" id="L35">      int randomEstimateIndex = generator.nextInt((maxValues.size() - 1) - 0 + 1) + 0;</span>
+<span class="fc" id="L36">      return estimateValues.indexOf(maxValues.get(randomEstimateIndex));</span>
+    }
+  }
+
+  public void updateEstimateValue(int bagId, double reward) {
+<span class="nc" id="L41">    EstimateValue estimateValue = estimateValues.get(bagId);</span>
+<span class="nc" id="L42">    estimateValue.updateEstimateValue(reward);</span>
+
+<span class="nc" id="L44">  }</span>
+
+  public Ball selectBallRandomly(int i) {
+<span class="fc" id="L47">    Bag bag = bags.get(i);</span>
+<span class="fc" id="L48">    int randomBallIndex = generator.nextInt((bag.balls.size() - 1) - 0 + 1) + 0;</span>
+<span class="fc" id="L49">    return bag.balls.get(randomBallIndex);</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.10.201703111023</span></div></body></html>
