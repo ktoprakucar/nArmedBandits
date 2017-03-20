@@ -1,5 +1,0 @@
-projectKey=com.toprak.app:nArmedBandits
-serverUrl=http://localhost:9000
-dashboardUrl=http://localhost:9000/dashboard/index/com.toprak.app:nArmedBandits
-ceTaskId=AVrroiIMvG6zaNxV-mer
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AVrroiIMvG6zaNxV-mer

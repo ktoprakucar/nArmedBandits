@@ -1,4 +1,4 @@
-import Entity.EstimateValue;
+import entity.EstimateValue;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
@@ -13,7 +13,7 @@ public class EstimateValueTest {
   @Test
   public void test_update_estimate_value(){
     value.updateEstimateValue(1);
-    assertEquals(0.5, value.estimateValue);
+    assertEquals(0.5, value.estimatedValue);
     assertEquals(1, value.estimateValueList.size());
   }
 }

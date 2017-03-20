@@ -1,4 +1,4 @@
-import Entity.Bag;
+import entity.Bag;
 import org.junit.Before;
 import org.junit.Test;
 

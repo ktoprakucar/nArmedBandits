@@ -1,6 +1,6 @@
-import Entity.Bag;
-import Entity.Ball;
-import Entity.EstimateValue;
+import entity.Bag;
+import entity.Ball;
+import entity.EstimateValue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +22,9 @@ public class Bandit {
       if (estimateValues.indexOf(estimate) == 0) {
         maxValues.add(estimateValues.get(0));
         continue;
-      } else if (estimate.estimateValue == maxValues.get(0).estimateValue)
+      } else if (estimate.estimatedValue == maxValues.get(0).estimatedValue)
         maxValues.add(estimate);
-      else if (estimate.estimateValue > maxValues.get(0).estimateValue) {
+      else if (estimate.estimatedValue > maxValues.get(0).estimatedValue) {
         maxValues.clear();
         maxValues.add(estimate);
       }
