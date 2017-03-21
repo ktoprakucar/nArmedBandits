@@ -20,10 +20,10 @@ public class SimulatorTest {
   @Before
   public void setUp() {
     bandit = new Bandit();
-    Bag bag1 = new Bag(0, 10, 10);
-    Bag bag2 = new Bag(10, 30, 30);
-    Bag bag3 = new Bag(50, 10, 10);
-    Bag bag4 = new Bag(20000, 20, 20);
+    Bag bag1 = new Bag(200, 10, 10);
+    Bag bag2 = new Bag(100, 30, 30);
+    Bag bag3 = new Bag(20, 10, 10);
+    Bag bag4 = new Bag(20, 20, 20);
 
     double alpha = 0.0001;
 
@@ -84,21 +84,24 @@ public class SimulatorTest {
   }
 
   @Test
-  public void test_simulator_with_reinforcement_comparison(){
-  for(int i = 0; i<5000;i++){
-    bagNumber = bandit.epsilonReinforcementComparison(0.35);
-    Ball pickedBall = bandit.selectBallRandomly(bagNumber);
-    reward = bandit.useNoiseForRewarding(pickedBall.color);
-    bandit.preferenceValues.get(bagNumber).updatePreferenceValue(bandit.referenceReward, reward);
-    bandit.updateReferenceReward(0.01, reward);
-    counter(bagNumber);
-    //System.out.println("Bag Number: " + bagNumber + " ----- PreferenceValue: " + bandit.preferenceValues.get(bagNumber).value);
-    //System.out.println(toString());
-  }
+  public void test_simulator_with_reinforcement_comparison() {
+    double epsilon = 0.35;
+    for (int i = 0; i < 5000; i++) {
+      bagNumber = bandit.epsilonReinforcementComparison(epsilon);
+      Ball pickedBall = bandit.selectBallRandomly(bagNumber);
+      reward = bandit.useNoiseForRewarding(pickedBall.color);
+      bandit.preferenceValues.get(bagNumber).updatePreferenceValue(bandit.referenceReward, reward);
+      bandit.updateReferenceReward(0.01, reward);
+      counter(bagNumber);
+      //System.out.println("Bag Number: " + bagNumber + " ----- PreferenceValue: " + bandit.preferenceValues.get(bagNumber).value + "---- epsilon: " + epsilon);
+      //System.out.println(toString());
+      if (epsilon > 0.001)
+        epsilon -= 0.0000001;
+    }
   }
 
   private void assignInitialOptimalValues(double estimateValue) {
-    for(EstimateValue value: bandit.estimateValues){
+    for (EstimateValue value : bandit.estimateValues) {
       value.estimatedValue = estimateValue;
     }
   }

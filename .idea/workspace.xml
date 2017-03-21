@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cda15004-99a2-428d-9dcd-7f7be99bf6bf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Bandit.java" afterPath="$PROJECT_DIR$/src/main/java/Bandit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/BanditTest.java" afterPath="$PROJECT_DIR$/src/test/java/BanditTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/SimulatorTest.java" afterPath="$PROJECT_DIR$/src/test/java/SimulatorTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -46,8 +44,8 @@
       <file leaf-file-name="SimulatorTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/SimulatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="67" column="8" lean-forward="false" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
+            <state relative-caret-position="204">
+              <caret line="60" column="25" lean-forward="false" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -237,7 +235,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="JUnit.SimulatorTest.test_simulator_with_epsilon_greedy">
+  <component name="RunManager" selected="JUnit.SimulatorTest.test_simulator_with_reinforcement_comparison">
     <configuration default="false" name="SimulatorTest.test_simulator_with_epsilon_greedy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="nArmedBandits" />
@@ -547,8 +545,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SimulatorTest.test_simulator_with_epsilon_greedy" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SimulatorTest.test_simulator_with_reinforcement_comparison" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SimulatorTest.test_simulator_with_reinforcement_comparison" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SimulatorTest.test_simulator_with_epsilon_greedy" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.SimulatorTest" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.BanditTest.test_reinforcement_comparison_selection" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.SimulatorTest.test_simulator_optimal_with_initial_values" />
@@ -577,39 +575,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SimulatorTest_test_simulator_with_epsilon_greedy - 2017.03.21 at 15h 11m 53s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_epsilon_greedy" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 11m 56s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_epsilon_greedy - 2017.03.21 at 15h 11m 58s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_epsilon_greedy" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 12m 36s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_epsilon_greedy - 2017.03.21 at 15h 12m 02s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_epsilon_greedy" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 12m 52s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_epsilon_greedy - 2017.03.21 at 15h 17m 30s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_epsilon_greedy" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 13m 15s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_epsilon_greedy - 2017.03.21 at 15h 17m 39s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_epsilon_greedy" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 13m 34s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_epsilon_greedy - 2017.03.21 at 15h 18m 00s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_epsilon_greedy" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 13m 57s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_epsilon_greedy - 2017.03.21 at 15h 18m 07s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_epsilon_greedy" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 14m 22s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_epsilon_greedy - 2017.03.21 at 15h 18m 16s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_epsilon_greedy" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 14m 41s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_epsilon_greedy - 2017.03.21 at 15h 19m 32s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_epsilon_greedy" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 15m 10s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_epsilon_greedy - 2017.03.21 at 15h 19m 45s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_epsilon_greedy" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 15m 31s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -618,7 +616,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37123746" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19509476" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Sequence" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1105,8 +1103,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/SimulatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="67" column="8" lean-forward="false" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
+        <state relative-caret-position="204">
+          <caret line="60" column="25" lean-forward="false" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
