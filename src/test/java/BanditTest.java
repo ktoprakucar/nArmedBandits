@@ -169,6 +169,16 @@ public class BanditTest {
     Bag bag3 = new Bag(50, 10, 10);
     Bag bag4 = new Bag(2000, 20, 20);
 
+    PreferenceValue value1 = new PreferenceValue(0.5);
+    PreferenceValue value2 = new PreferenceValue(0.5);
+    PreferenceValue value3 = new PreferenceValue(0.5);
+    PreferenceValue value4 = new PreferenceValue(0.5);
+
+    bandit.preferenceValues.add(value1);
+    bandit.preferenceValues.add(value2);
+    bandit.preferenceValues.add(value3);
+    bandit.preferenceValues.add(value4);
+
     double alpha = 0.0001;
 
     bandit.bags.add(bag1);
@@ -190,5 +200,25 @@ public class BanditTest {
     System.out.println(bandit.referenceReward);
   }
 
+  @Test
+  public void test_reinforcement_comparison_selection(){
+    PreferenceValue value1 = new PreferenceValue(0.5);
+    value1.value = 0.2;
+    PreferenceValue value2 = new PreferenceValue(0.5);
+    value2.value = 0.3;
+    PreferenceValue value3 = new PreferenceValue(0.5);
+    value3.value = 0.4;
+    PreferenceValue value4 = new PreferenceValue(0.5);
+    value4.value = 0.5;
+
+    bandit.preferenceValues.add(value1);
+    bandit.preferenceValues.add(value2);
+    bandit.preferenceValues.add(value3);
+    bandit.preferenceValues.add(value4);
+
+    int index = bandit.reinforcementComparisonSelection();
+    assertEquals(3, index);
+
+  }
 
 }

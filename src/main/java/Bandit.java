@@ -61,10 +61,43 @@ public class Bandit {
     }
   }
 
+  public int reinforcementComparisonSelection() {
+    List<PreferenceValue> maxValues = new ArrayList<PreferenceValue>();
+    double sumOfEValuesPowerOfPreferenceValues = calculateSumOfPreferenceValues();
+      if(sumOfEValuesPowerOfPreferenceValues>0.00000000000000000001){
+      for (PreferenceValue preferenceValue : preferenceValues) {
+        if (preferenceValues.indexOf(preferenceValue) == 0) {
+          maxValues.add(preferenceValue);
+          continue;
+        } else if (Math.pow(Math.E, preferenceValue.value) / sumOfEValuesPowerOfPreferenceValues == Math.pow(Math.E, maxValues.get(0).value) / sumOfEValuesPowerOfPreferenceValues)
+          maxValues.add(preferenceValue);
+        else if (Math.pow(Math.E, preferenceValue.value) / sumOfEValuesPowerOfPreferenceValues > Math.pow(Math.E, maxValues.get(0).value) / sumOfEValuesPowerOfPreferenceValues) {
+          maxValues.clear();
+          maxValues.add(preferenceValue);
+        }
+      }
+
+      if (maxValues.size() == 1)
+        return preferenceValues.indexOf(maxValues.get(0));
+      else {
+        int randomEstimateIndex = generator.nextInt((maxValues.size() - 1) - 0 + 1) + 0;
+        return preferenceValues.indexOf(maxValues.get(randomEstimateIndex));
+      }
+  }
+  return -1;
+  }
+
+  private double calculateSumOfPreferenceValues() {
+    double sum = 0;
+    for (PreferenceValue value : preferenceValues) {
+      sum = +sum + Math.pow(Math.E, value.value);
+    }
+    return sum;
+  }
+
   public void updateEstimateValue(int bagId, double reward) {
     EstimateValue estimateValue = estimateValues.get(bagId);
     estimateValue.updateEstimateValue(reward);
-
   }
 
   public Ball selectBallRandomly(int i) {
@@ -83,7 +116,7 @@ public class Bandit {
   }
 
   public void initializePreferenceValues() {
-    double initalValue = 1 / bags.size();
+    double initalValue = 1.00 / bags.size();
     for (PreferenceValue value : preferenceValues)
       value.value = initalValue;
   }
