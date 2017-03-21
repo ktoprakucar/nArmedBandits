@@ -17,7 +17,7 @@ public class EstimateValue {
     }
 
     public void updateEstimateValue(double reward){
-        estimateValueList.add(reward);
+        estimateValueList.add(estimatedValue);
         estimatedValue += alpha * ( reward - estimatedValue);
     }
 

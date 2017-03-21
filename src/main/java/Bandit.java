@@ -1,6 +1,7 @@
 import entity.Bag;
 import entity.Ball;
 import entity.EstimateValue;
+import entity.PreferenceValue;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.Random;
  */
 public class Bandit {
   List<EstimateValue> estimateValues = new ArrayList<EstimateValue>();
+  List<PreferenceValue> preferenceValues = new ArrayList<PreferenceValue>();
   Random generator = new Random();
   List<Bag> bags = new ArrayList<Bag>();
   double alpha = 0.0;
@@ -77,4 +79,9 @@ public class Bandit {
   }
 
 
+  public void initializePreferenceValues() {
+    double initalValue = 1 / bags.size();
+    for(PreferenceValue value: preferenceValues)
+      value.value = initalValue;
+  }
 }

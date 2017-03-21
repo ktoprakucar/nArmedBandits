@@ -19,7 +19,7 @@ public class SimulatorTest {
   @Before
   public void setUp() {
     bandit = new Bandit();
-    Bag bag1 = new Bag(5000, 10, 10);
+    Bag bag1 = new Bag(50000, 10, 10);
     Bag bag2 = new Bag(10, 30, 30);
     Bag bag3 = new Bag(50, 10, 10);
     Bag bag4 = new Bag(2000, 20, 20);
@@ -43,18 +43,23 @@ public class SimulatorTest {
 
   }
 
-  @Override
-  public String toString() {
-    return "SimulatorTest{" +
-            "bag1Counter=" + bag1Counter +
-            ", bag2Counter=" + bag2Counter +
-            ", bag3Counter=" + bag3Counter +
-            ", bag4Counter=" + bag4Counter +
-            '}';
+
+  @Test
+  public void test_simulator_with_epsilon_greedy() {
+    for (int i = 0; i < 5000; i++) {
+      bagNumber = bandit.epsilonGreedySelection(0.5);
+      Ball pickedBall = bandit.selectBallRandomly(bagNumber);
+      reward = bandit.useNoiseForRewarding(pickedBall.color);
+      bandit.updateEstimateValue(bagNumber, reward);
+      counter(bagNumber);
+      //System.out.println("Bag Number: " + bagNumber + " ----- EstimateValue: " + bandit.estimateValues.get(bagNumber).estimatedValue);
+      //System.out.println(toString());
+    }
   }
 
   @Test
-  public void test_epsilon_greedy_simulator() {
+  public void test_simulator_optimal_with_initial_values() {
+    assignInitialOptimalValues(5.0);
     for (int i = 0; i < 5000; i++) {
       bagNumber = bandit.epsilonGreedySelection(0.5);
       Ball pickedBall = bandit.selectBallRandomly(bagNumber);
@@ -63,6 +68,12 @@ public class SimulatorTest {
       counter(bagNumber);
       //System.out.println("Bag Number: " + bagNumber + " ----- EstimateValue: " + bandit.estimateValues.get(bagNumber).estimatedValue);
       //System.out.println(toString());
+    }
+  }
+
+  private void assignInitialOptimalValues(double estimateValue) {
+    for(EstimateValue value: bandit.estimateValues){
+      value.estimatedValue = estimateValue;
     }
   }
 
@@ -75,5 +86,16 @@ public class SimulatorTest {
       bag3Counter++;
     else if (index == 3)
       bag4Counter++;
+  }
+
+
+  @Override
+  public String toString() {
+    return "SimulatorTest{" +
+            "bag1Counter=" + bag1Counter +
+            ", bag2Counter=" + bag2Counter +
+            ", bag3Counter=" + bag3Counter +
+            ", bag4Counter=" + bag4Counter +
+            '}';
   }
 }

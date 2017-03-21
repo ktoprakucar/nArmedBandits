@@ -1,6 +1,7 @@
 import entity.Bag;
 import entity.Ball;
 import entity.EstimateValue;
+import entity.PreferenceValue;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -108,6 +109,7 @@ public class BanditTest {
 
   @Test
   public void test_selection_with_epsilon_greedy_with_1(){
+    bandit.isFirst = false;
     EstimateValue e1 = new EstimateValue(0.0);
     e1.estimatedValue = 4.0;
 
@@ -158,6 +160,27 @@ public class BanditTest {
     bandit.noise = 0.4;
     double reward = bandit.useNoiseForRewarding(Color.blue);
     assertEquals(0.4, reward);
+  }
+
+  @Test
+  public void test_initialize_preference_values(){
+    Bag bag1 = new Bag(50000, 10, 10);
+    Bag bag2 = new Bag(10, 30, 30);
+    Bag bag3 = new Bag(50, 10, 10);
+    Bag bag4 = new Bag(2000, 20, 20);
+
+    double alpha = 0.0001;
+
+    bandit.bags.add(bag1);
+    bandit.bags.add(bag2);
+    bandit.bags.add(bag3);
+    bandit.bags.add(bag4);
+
+    bandit.initializePreferenceValues();
+    for(PreferenceValue value : bandit.preferenceValues){
+      assertEquals(value.value, 0.25);
+    }
+
   }
 
 
