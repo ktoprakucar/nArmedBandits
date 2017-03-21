@@ -20,10 +20,10 @@ public class SimulatorTest {
   @Before
   public void setUp() {
     bandit = new Bandit();
-    Bag bag1 = new Bag(200, 10, 10);
-    Bag bag2 = new Bag(100, 30, 30);
+    Bag bag1 = new Bag(50, 10, 10);
+    Bag bag2 = new Bag(1000, 30, 30);
     Bag bag3 = new Bag(20, 10, 10);
-    Bag bag4 = new Bag(20, 20, 20);
+    Bag bag4 = new Bag(200, 20, 20);
 
     double alpha = 0.0001;
 
@@ -33,9 +33,13 @@ public class SimulatorTest {
     EstimateValue value4 = new EstimateValue(alpha);
 
     PreferenceValue p1 = new PreferenceValue(0.5);
+    p1.value = 0.25;
     PreferenceValue p2 = new PreferenceValue(0.5);
+    p2.value = 0.25;
     PreferenceValue p3 = new PreferenceValue(0.5);
+    p3.value = 0.25;
     PreferenceValue p4 = new PreferenceValue(0.5);
+    p4.value = 0.25;
 
 
     bandit.bags.add(bag1);
@@ -85,18 +89,37 @@ public class SimulatorTest {
 
   @Test
   public void test_simulator_with_reinforcement_comparison() {
-    double epsilon = 0.35;
+    double epsilon = 0.1;
     for (int i = 0; i < 5000; i++) {
       bagNumber = bandit.epsilonReinforcementComparison(epsilon);
       Ball pickedBall = bandit.selectBallRandomly(bagNumber);
       reward = bandit.useNoiseForRewarding(pickedBall.color);
       bandit.preferenceValues.get(bagNumber).updatePreferenceValue(bandit.referenceReward, reward);
-      bandit.updateReferenceReward(0.01, reward);
+      bandit.updateReferenceReward(0.1, reward);
       counter(bagNumber);
       //System.out.println("Bag Number: " + bagNumber + " ----- PreferenceValue: " + bandit.preferenceValues.get(bagNumber).value + "---- epsilon: " + epsilon);
       //System.out.println(toString());
-      if (epsilon > 0.001)
-        epsilon -= 0.0000001;
+//      if (epsilon > 0.001)
+//        epsilon -= 0.0000001;
+    }
+  }
+
+  @Test
+  public void test_simulator_with_pursuit_methods(){
+    double epsilon = 0.35;
+    double beta = 0.01;
+    for(int i=0; i<5000;i++){
+      bagNumber = bandit.epsilonReinforcementComparison(epsilon);
+      Ball pickedBall = bandit.selectBallRandomly(bagNumber);
+      reward = bandit.useNoiseForRewarding(pickedBall.color);
+      bandit.estimateValues.get(bagNumber).updateEstimateValueForPursuitMethods(reward);
+      int greatestBagId = bandit.greedySelection();
+      bandit.updateActionPreferenceForPursuitMethods(greatestBagId, beta, reward);
+      counter(bagNumber);
+      //System.out.println("Bag Number: " + bagNumber + " ----- PreferenceValue: " + bandit.preferenceValues.get(bagNumber).value + "---- EstimateValue: " + bandit.estimateValues.get(bagNumber).estimatedValue);
+      //System.out.println(toString());
+      if(epsilon < 0.003)
+        epsilon -= 0.0001;
     }
   }
 

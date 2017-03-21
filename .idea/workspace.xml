@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cda15004-99a2-428d-9dcd-7f7be99bf6bf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Bandit.java" afterPath="$PROJECT_DIR$/src/main/java/Bandit.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entity/EstimateValue.java" afterPath="$PROJECT_DIR$/src/main/java/entity/EstimateValue.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/SimulatorTest.java" afterPath="$PROJECT_DIR$/src/test/java/SimulatorTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,11 +28,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Bandit.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Bandit.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Bandit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="54" column="115" lean-forward="false" selection-start-line="54" selection-start-column="115" selection-end-line="54" selection-end-column="115" />
+            <state relative-caret-position="214">
+              <caret line="121" column="2" lean-forward="false" selection-start-line="121" selection-start-column="2" selection-end-line="121" selection-end-column="2" />
               <folding>
                 <element signature="e#388#405#0" expanded="true" />
                 <element signature="e#447#455#0" expanded="true" />
@@ -41,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimulatorTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SimulatorTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/SimulatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="60" column="25" lean-forward="false" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+            <state relative-caret-position="78">
+              <caret line="110" column="22" lean-forward="false" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,8 +59,8 @@
       <file leaf-file-name="PreferenceValue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/entity/PreferenceValue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BanditTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/BanditTest.java">
+      <file leaf-file-name="EstimateValue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/entity/EstimateValue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="211" column="25" lean-forward="false" selection-start-line="211" selection-start-column="25" selection-end-line="211" selection-end-column="25" />
+            <state relative-caret-position="408">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -108,12 +111,12 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/entity/Bag.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/EstimateValue.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/PreferenceValue.java" />
         <option value="$PROJECT_DIR$/src/test/java/PreferenceValueTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/BanditTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Bandit.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/EstimateValue.java" />
         <option value="$PROJECT_DIR$/src/test/java/SimulatorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Bandit.java" />
       </list>
     </option>
   </component>
@@ -235,7 +238,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="JUnit.SimulatorTest.test_simulator_with_reinforcement_comparison">
+  <component name="RunManager" selected="JUnit.SimulatorTest.test_simulator_with_pursuit_methods">
     <configuration default="false" name="SimulatorTest.test_simulator_with_epsilon_greedy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="nArmedBandits" />
@@ -244,27 +247,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SimulatorTest" />
       <option name="METHOD_NAME" value="test_simulator_with_epsilon_greedy" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="SimulatorTest.test_simulator_optimal_with_initial_values" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="nArmedBandits" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SimulatorTest" />
-      <option name="METHOD_NAME" value="test_simulator_optimal_with_initial_values" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -329,6 +311,27 @@
       <option name="MAIN_CLASS_NAME" value="SimulatorTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="SimulatorTest.test_simulator_with_pursuit_methods" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="nArmedBandits" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SimulatorTest" />
+      <option name="METHOD_NAME" value="test_simulator_with_pursuit_methods" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -538,18 +541,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.SimulatorTest.test_simulator_with_epsilon_greedy" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.SimulatorTest.test_simulator_optimal_with_initial_values" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SimulatorTest.test_simulator_with_reinforcement_comparison" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.BanditTest.test_reinforcement_comparison_selection" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SimulatorTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.SimulatorTest.test_simulator_with_reinforcement_comparison" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.BanditTest.test_reinforcement_comparison_selection" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SimulatorTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SimulatorTest.test_simulator_with_pursuit_methods" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SimulatorTest.test_simulator_with_reinforcement_comparison" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SimulatorTest.test_simulator_with_epsilon_greedy" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SimulatorTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.BanditTest.test_reinforcement_comparison_selection" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.SimulatorTest.test_simulator_optimal_with_initial_values" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SimulatorTest.test_simulator_with_pursuit_methods" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SimulatorTest.test_simulator_with_reinforcement_comparison" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SimulatorTest.test_simulator_with_epsilon_greedy" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SimulatorTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.BanditTest.test_reinforcement_comparison_selection" />
       </list>
     </recent_temporary>
   </component>
@@ -575,35 +578,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 11m 56s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_pursuit_methods - 2017.03.21 at 18h 51m 58s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_pursuit_methods" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 12m 36s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_pursuit_methods - 2017.03.21 at 18h 55m 24s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_pursuit_methods" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 12m 52s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_pursuit_methods - 2017.03.21 at 19h 02m 45s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_pursuit_methods" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 13m 15s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_pursuit_methods - 2017.03.21 at 19h 02m 57s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_pursuit_methods" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 13m 34s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_pursuit_methods - 2017.03.21 at 19h 03m 12s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_pursuit_methods" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 13m 57s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_pursuit_methods - 2017.03.21 at 19h 03m 58s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_pursuit_methods" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 14m 22s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_pursuit_methods - 2017.03.21 at 19h 05m 36s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_pursuit_methods" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 14m 41s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_pursuit_methods - 2017.03.21 at 19h 09m 41s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_pursuit_methods" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 15m 10s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_pursuit_methods - 2017.03.21 at 19h 09m 47s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_pursuit_methods" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SimulatorTest_test_simulator_with_reinforcement_comparison - 2017.03.21 at 16h 15m 31s.xml">
-      <configuration name="SimulatorTest.test_simulator_with_reinforcement_comparison" configurationId="JUnit" />
+    <history-entry file="SimulatorTest_test_simulator_with_pursuit_methods - 2017.03.21 at 19h 11m 15s.xml">
+      <configuration name="SimulatorTest.test_simulator_with_pursuit_methods" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -616,7 +619,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19509476" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35340023" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Sequence" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -674,8 +677,15 @@
           <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <condition expression="i == 499999" language="JAVA" />
+          <url>file://$PROJECT_DIR$/src/test/java/SimulatorTest.java</url>
+          <line>119</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="29" />
+      <option name="time" value="34" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1017,14 +1027,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/EstimateValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="44" lean-forward="false" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/EstimateValueTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1069,44 +1071,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Bandit.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/BanditTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="54" column="115" lean-forward="false" selection-start-line="54" selection-start-column="115" selection-end-line="54" selection-end-column="115" />
-          <folding>
-            <element signature="e#388#405#0" expanded="true" />
-            <element signature="e#447#455#0" expanded="true" />
-            <element signature="e#1735#1750#0" expanded="true" />
-            <element signature="e#2283#2300#0" expanded="true" />
-            <element signature="e#3470#3487#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="673">
+          <caret line="211" column="25" lean-forward="false" selection-start-line="211" selection-start-column="25" selection-end-line="211" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entity/PreferenceValue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BanditTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/EstimateValue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="211" column="25" lean-forward="false" selection-start-line="211" selection-start-column="25" selection-end-line="211" selection-end-column="25" />
+        <state relative-caret-position="408">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/SimulatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="60" column="25" lean-forward="false" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+        <state relative-caret-position="78">
+          <caret line="110" column="22" lean-forward="false" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Bandit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="121" column="2" lean-forward="false" selection-start-line="121" selection-start-column="2" selection-end-line="121" selection-end-column="2" />
+          <folding>
+            <element signature="e#388#405#0" expanded="true" />
+            <element signature="e#447#455#0" expanded="true" />
+            <element signature="e#1735#1750#0" expanded="true" />
+            <element signature="e#2283#2300#0" expanded="true" />
+            <element signature="e#3470#3487#0" expanded="true" />
           </folding>
         </state>
       </provider>

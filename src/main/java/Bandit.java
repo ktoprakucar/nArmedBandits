@@ -119,15 +119,7 @@ public class Bandit {
       return true;
     }
   }
-
-  private double calculateSumOfPreferenceValues() {
-    double sum = 0;
-    for (PreferenceValue value : preferenceValues) {
-      sum =+ sum + Math.pow(Math.E, value.value);
-    }
-    return sum;
-  }
-
+  
   public void updateEstimateValue(int bagId, double reward) {
     EstimateValue estimateValue = estimateValues.get(bagId);
     estimateValue.updateEstimateValue(reward);
@@ -156,5 +148,14 @@ public class Bandit {
 
   public void updateReferenceReward(double alpha, double reward) {
     referenceReward = +referenceReward + alpha * (reward - referenceReward);
+  }
+
+  public void updateActionPreferenceForPursuitMethods(int bagNumber, double beta, double reward) {
+  for(PreferenceValue preferenceValue: preferenceValues){
+    if(preferenceValues.indexOf(preferenceValue)==bagNumber)
+      preferenceValue.value += beta * (reward - preferenceValue.value);
+    else
+      preferenceValue.value += beta * (0 - preferenceValue.value);
+  }
   }
 }
