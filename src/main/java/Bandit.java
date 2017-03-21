@@ -39,6 +39,23 @@ public class Bandit {
     }
   }
 
+  public int epsilonGreedySelection(double epsilon) {
+    int indexOfGreatestValue = greedySelection();
+    Random randomizer = new Random();
+    double number = randomizer.nextDouble();
+    if(number < 1 - epsilon)
+      return indexOfGreatestValue;
+    else{
+      List<EstimateValue> exploratoryValues = new ArrayList<EstimateValue>();
+      for(EstimateValue value : estimateValues){
+        if(value.estimatedValue < estimateValues.get(indexOfGreatestValue).estimatedValue)
+          exploratoryValues.add(value);
+      }
+      int randomEstimateIndex = generator.nextInt((exploratoryValues.size() - 1) - 0 + 1) + 0;
+      return estimateValues.indexOf(exploratoryValues.get(randomEstimateIndex));
+    }
+  }
+
   public void updateEstimateValue(int bagId, double reward) {
     EstimateValue estimateValue = estimateValues.get(bagId);
     estimateValue.updateEstimateValue(reward);
@@ -56,4 +73,6 @@ public class Bandit {
       return 1 - noise;
     return noise;
   }
+
+
 }

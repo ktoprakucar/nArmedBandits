@@ -5,10 +5,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.awt.*;
+import java.util.Random;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.AnyOf.anyOf;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -78,6 +80,62 @@ public class BanditTest {
 
     int index = bandit.greedySelection();
     assertThat(index, anyOf(is(3), is(4), is(5)));
+  }
+
+  @Test
+  public void test_selection_with_epsilon_greedy_with_0(){
+    EstimateValue e1 = new EstimateValue(0.0);
+    e1.estimatedValue = 4.0;
+
+    EstimateValue e2 = new EstimateValue(0.0);
+    e2.estimatedValue = 5.0;
+
+    EstimateValue e3 = new EstimateValue(0.0);
+    e3.estimatedValue = 6.0;
+
+    EstimateValue e4 = new EstimateValue(0.0);
+    e4.estimatedValue = 7.0;
+
+    bandit.estimateValues.add(e1);
+    bandit.estimateValues.add(e2);
+    bandit.estimateValues.add(e3);
+    bandit.estimateValues.add(e4);
+
+    int index = bandit.epsilonGreedySelection(0);
+    assertEquals(index, 3);
+
+  }
+
+  @Test
+  public void test_selection_with_epsilon_greedy_with_1(){
+    EstimateValue e1 = new EstimateValue(0.0);
+    e1.estimatedValue = 4.0;
+
+    EstimateValue e2 = new EstimateValue(0.0);
+    e2.estimatedValue = 5.0;
+
+    EstimateValue e3 = new EstimateValue(0.0);
+    e3.estimatedValue = 6.0;
+
+    EstimateValue e4 = new EstimateValue(0.0);
+    e4.estimatedValue = 7.0;
+
+    bandit.estimateValues.add(e1);
+    bandit.estimateValues.add(e2);
+    bandit.estimateValues.add(e3);
+    bandit.estimateValues.add(e4);
+
+    int index = bandit.epsilonGreedySelection(1);
+    assertNotEquals(index, 3);
+    System.out.println(index);
+
+  }
+
+  @Test
+  public void test_random(){
+    Random randomizer = new Random();
+    double number = randomizer.nextDouble();
+    System.out.println(number);
   }
 
   @Test
