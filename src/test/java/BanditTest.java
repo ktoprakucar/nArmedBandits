@@ -203,13 +203,13 @@ public class BanditTest {
   @Test
   public void test_reinforcement_comparison_selection(){
     PreferenceValue value1 = new PreferenceValue(0.5);
-    value1.value = 0.2;
+    value1.value = -369.7557;
     PreferenceValue value2 = new PreferenceValue(0.5);
-    value2.value = 0.3;
+    value2.value = -299.09;
     PreferenceValue value3 = new PreferenceValue(0.5);
-    value3.value = 0.4;
+    value3.value = -5.600;
     PreferenceValue value4 = new PreferenceValue(0.5);
-    value4.value = 0.5;
+    value4.value = 709.78;
 
     bandit.preferenceValues.add(value1);
     bandit.preferenceValues.add(value2);

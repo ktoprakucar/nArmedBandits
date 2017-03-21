@@ -52,7 +52,7 @@ public class Bandit {
     else {
       List<EstimateValue> exploratoryValues = new ArrayList<EstimateValue>();
       for (EstimateValue value : estimateValues) {
-        if (value.estimatedValue < estimateValues.get(indexOfGreatestValue).estimatedValue || isFirst)
+        if (value.estimatedValue < estimateValues.get(indexOfGreatestValue).estimatedValue || areAllEqual("estimate"))
           exploratoryValues.add(value);
       }
       isFirst = false;
@@ -63,15 +63,14 @@ public class Bandit {
 
   public int reinforcementComparisonSelection() {
     List<PreferenceValue> maxValues = new ArrayList<PreferenceValue>();
-    double sumOfEValuesPowerOfPreferenceValues = calculateSumOfPreferenceValues();
-      if(sumOfEValuesPowerOfPreferenceValues>0.00000000000000000001){
+
       for (PreferenceValue preferenceValue : preferenceValues) {
         if (preferenceValues.indexOf(preferenceValue) == 0) {
           maxValues.add(preferenceValue);
           continue;
-        } else if (Math.pow(Math.E, preferenceValue.value) / sumOfEValuesPowerOfPreferenceValues == Math.pow(Math.E, maxValues.get(0).value) / sumOfEValuesPowerOfPreferenceValues)
+        } else if (Math.pow(Math.E, preferenceValue.value)  == Math.pow(Math.E, maxValues.get(0).value) )
           maxValues.add(preferenceValue);
-        else if (Math.pow(Math.E, preferenceValue.value) / sumOfEValuesPowerOfPreferenceValues > Math.pow(Math.E, maxValues.get(0).value) / sumOfEValuesPowerOfPreferenceValues) {
+        else if (Math.pow(Math.E, preferenceValue.value)  > Math.pow(Math.E, maxValues.get(0).value) ) {
           maxValues.clear();
           maxValues.add(preferenceValue);
         }
@@ -84,13 +83,47 @@ public class Bandit {
         return preferenceValues.indexOf(maxValues.get(randomEstimateIndex));
       }
   }
-  return -1;
+
+  public int epsilonReinforcementComparison(double epsilon) {
+    int indexOfGreatestValue = reinforcementComparisonSelection();
+    Random randomizer = new Random();
+    double number = randomizer.nextDouble();
+    if (number < 1 - epsilon)
+      return indexOfGreatestValue;
+    else {
+      List<PreferenceValue> exploratoryValues = new ArrayList<PreferenceValue>();
+      for (PreferenceValue preferenceValue : preferenceValues) {
+        if (preferenceValue.value < preferenceValues.get(indexOfGreatestValue).value || areAllEqual("preference"))
+          exploratoryValues.add(preferenceValue);
+      }
+      isFirst = false;
+      int randomEstimateIndex = generator.nextInt((exploratoryValues.size() - 1) - 0 + 1) + 0;
+      return preferenceValues.indexOf(exploratoryValues.get(randomEstimateIndex));
+    }
+  }
+
+  private boolean areAllEqual(String valueName) {
+    if("preference".equalsIgnoreCase(valueName)) {
+      PreferenceValue firstValue = preferenceValues.get(0);
+      for (PreferenceValue preferenceValue : preferenceValues) {
+        if (preferenceValue.value != firstValue.value)
+          return false;
+      }
+      return true;
+    } else {
+      EstimateValue firstValue = estimateValues.get(0);
+      for (EstimateValue estimateValue : estimateValues) {
+        if (estimateValue.estimatedValue != firstValue.estimatedValue)
+          return false;
+      }
+      return true;
+    }
   }
 
   private double calculateSumOfPreferenceValues() {
     double sum = 0;
     for (PreferenceValue value : preferenceValues) {
-      sum = +sum + Math.pow(Math.E, value.value);
+      sum =+ sum + Math.pow(Math.E, value.value);
     }
     return sum;
   }
