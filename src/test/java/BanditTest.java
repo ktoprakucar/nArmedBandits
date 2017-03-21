@@ -180,7 +180,14 @@ public class BanditTest {
     for(PreferenceValue value : bandit.preferenceValues){
       assertEquals(value.value, 0.25);
     }
+  }
 
+  @Test
+  public void test_update_reference_reward(){
+    double alpha = 0.5;
+    double reward = 1.0;
+    bandit.updateReferenceReward(alpha, reward);
+    System.out.println(bandit.referenceReward);
   }
 
 

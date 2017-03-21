@@ -14,10 +14,11 @@ import java.util.Random;
 public class Bandit {
   List<EstimateValue> estimateValues = new ArrayList<EstimateValue>();
   List<PreferenceValue> preferenceValues = new ArrayList<PreferenceValue>();
+  List<Double> rewards = new ArrayList<Double>();
   Random generator = new Random();
   List<Bag> bags = new ArrayList<Bag>();
-  double alpha = 0.0;
   double noise = 0.0;
+  double referenceReward = 0.0;
   boolean isFirst = true;
 
   public int greedySelection() {
@@ -73,15 +74,21 @@ public class Bandit {
   }
 
   public double useNoiseForRewarding(Color color) {
-    if (color.equals(Color.RED))
+    if (color.equals(Color.RED)) {
+      rewards.add(1 - noise);
       return 1 - noise;
+    }
+    rewards.add(noise);
     return noise;
   }
 
-
   public void initializePreferenceValues() {
     double initalValue = 1 / bags.size();
-    for(PreferenceValue value: preferenceValues)
+    for (PreferenceValue value : preferenceValues)
       value.value = initalValue;
+  }
+
+  public void updateReferenceReward(double alpha, double reward) {
+    referenceReward = +referenceReward + alpha * (reward - referenceReward);
   }
 }
