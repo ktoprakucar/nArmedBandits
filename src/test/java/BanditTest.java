@@ -4,6 +4,8 @@ import entity.EstimateValue;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.awt.*;
+
 import static junit.framework.TestCase.assertEquals;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.AnyOf.anyOf;
@@ -79,30 +81,26 @@ public class BanditTest {
   }
 
   @Test
-  public void test_select_ball_from_bag_randomly(){
-    Bag bag = new Bag(10,20,30);
+  public void test_select_ball_from_bag_randomly() {
+    Bag bag = new Bag(10, 20, 30);
     bandit.bags.add(bag);
     Ball ball = bandit.selectBallRandomly(0);
     System.out.println(ball.color);
   }
 
   @Test
-  public void test_use_noise_for_rewarding_with_50_percent(){
-    bandit.noise = 50;
-    int reward = bandit.useNoiseForRewarding();
+  public void test_use_noise_for_red_color() {
+    bandit.noise = 0.4;
+    double reward = bandit.useNoiseForRewarding(Color.red);
+    assertEquals(0.6, reward);
   }
 
   @Test
-  public void test_use_noise_for_rewarding_with_0_percent(){
-    bandit.noise = 0;
-    int reward = bandit.useNoiseForRewarding();
-    assertEquals(reward, 0);
+  public void test_use_noise_for_other_colors() {
+    bandit.noise = 0.4;
+    double reward = bandit.useNoiseForRewarding(Color.blue);
+    assertEquals(0.4, reward);
   }
 
-  @Test
-  public void test_use_noise_for_rewarding_with_100_percent(){
-    bandit.noise = 100;
-    int reward = bandit.useNoiseForRewarding();
-    assertEquals(reward, 1);
-  }
+
 }

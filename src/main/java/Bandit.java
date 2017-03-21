@@ -2,6 +2,7 @@ import entity.Bag;
 import entity.Ball;
 import entity.EstimateValue;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -50,10 +51,9 @@ public class Bandit {
     return bag.balls.get(randomBallIndex);
   }
 
-  public int useNoiseForRewarding() {
-    double probability = noise / 100;
-    if(Math.random() <= probability)
-      return 1;
-    return 0;
+  public double useNoiseForRewarding(Color color) {
+    if (color.equals(Color.RED))
+      return 1 - noise;
+    return noise;
   }
 }
