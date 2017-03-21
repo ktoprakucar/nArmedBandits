@@ -16,6 +16,7 @@ public class Bandit {
   List<Bag> bags = new ArrayList<Bag>();
   double alpha = 0.0;
   double noise = 0.0;
+  boolean isFirst = true;
 
   public int greedySelection() {
     List<EstimateValue> maxValues = new ArrayList<EstimateValue>();
@@ -43,14 +44,15 @@ public class Bandit {
     int indexOfGreatestValue = greedySelection();
     Random randomizer = new Random();
     double number = randomizer.nextDouble();
-    if(number < 1 - epsilon)
+    if (number < 1 - epsilon)
       return indexOfGreatestValue;
-    else{
+    else {
       List<EstimateValue> exploratoryValues = new ArrayList<EstimateValue>();
-      for(EstimateValue value : estimateValues){
-        if(value.estimatedValue < estimateValues.get(indexOfGreatestValue).estimatedValue)
+      for (EstimateValue value : estimateValues) {
+        if (value.estimatedValue < estimateValues.get(indexOfGreatestValue).estimatedValue || isFirst)
           exploratoryValues.add(value);
       }
+      isFirst = false;
       int randomEstimateIndex = generator.nextInt((exploratoryValues.size() - 1) - 0 + 1) + 0;
       return estimateValues.indexOf(exploratoryValues.get(randomEstimateIndex));
     }
