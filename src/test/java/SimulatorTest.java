@@ -20,10 +20,10 @@ public class SimulatorTest {
   @Before
   public void setUp() {
     bandit = new Bandit();
-    Bag bag1 = new Bag(50, 10, 10);
+    Bag bag1 = new Bag(30, 10, 10);
     Bag bag2 = new Bag(1000, 30, 30);
     Bag bag3 = new Bag(20, 10, 10);
-    Bag bag4 = new Bag(200, 20, 20);
+    Bag bag4 = new Bag(30, 20, 20);
 
     double alpha = 0.0001;
 
@@ -62,34 +62,40 @@ public class SimulatorTest {
 
   @Test
   public void test_simulator_with_epsilon_greedy() {
+    double epsilon = 0.5;
     for (int i = 0; i < 5000; i++) {
-      bagNumber = bandit.epsilonGreedySelection(0.5);
+      bagNumber = bandit.epsilonGreedySelection(epsilon);
       Ball pickedBall = bandit.selectBallRandomly(bagNumber);
       reward = bandit.useNoiseForRewarding(pickedBall.color);
       bandit.updateEstimateValue(bagNumber, reward);
       counter(bagNumber);
-      //System.out.println("Bag Number: " + bagNumber + " ----- EstimateValue: " + bandit.estimateValues.get(bagNumber).estimatedValue);
       //System.out.println(toString());
+      //System.out.println(bandit.estimateValues.get(0).estimatedValue + "  " + bandit.estimateValues.get(1).estimatedValue + "  " + bandit.estimateValues.get(2).estimatedValue + "  " +bandit.estimateValues.get(3).estimatedValue);
+      if(epsilon > 0.003)
+        epsilon -= 0.00001;
     }
   }
 
   @Test
   public void test_simulator_optimal_with_initial_values() {
     assignInitialOptimalValues(5.0);
+    double epsilon = 0.5;
     for (int i = 0; i < 5000; i++) {
-      bagNumber = bandit.epsilonGreedySelection(0.5);
+      bagNumber = bandit.epsilonGreedySelection(epsilon);
       Ball pickedBall = bandit.selectBallRandomly(bagNumber);
       reward = bandit.useNoiseForRewarding(pickedBall.color);
       bandit.estimateValues.get(bagNumber).updateEstimateValue(reward);
       counter(bagNumber);
       //System.out.println("Bag Number: " + bagNumber + " ----- EstimateValue: " + bandit.estimateValues.get(bagNumber).estimatedValue);
       //System.out.println(toString());
+      if(epsilon > 0.003)
+        epsilon -= 0.00001;
     }
   }
 
   @Test
   public void test_simulator_with_reinforcement_comparison() {
-    double epsilon = 0.1;
+    double epsilon = 0.35;
     for (int i = 0; i < 5000; i++) {
       bagNumber = bandit.epsilonReinforcementComparison(epsilon);
       Ball pickedBall = bandit.selectBallRandomly(bagNumber);
@@ -99,8 +105,8 @@ public class SimulatorTest {
       counter(bagNumber);
       //System.out.println("Bag Number: " + bagNumber + " ----- PreferenceValue: " + bandit.preferenceValues.get(bagNumber).value + "---- epsilon: " + epsilon);
       //System.out.println(toString());
-//      if (epsilon > 0.001)
-//        epsilon -= 0.0000001;
+      if (epsilon > 0.003)
+        epsilon -= 0.0000001;
     }
   }
 

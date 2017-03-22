@@ -119,7 +119,6 @@ public class Bandit {
       return true;
     }
   }
-  
   public void updateEstimateValue(int bagId, double reward) {
     EstimateValue estimateValue = estimateValues.get(bagId);
     estimateValue.updateEstimateValue(reward);
